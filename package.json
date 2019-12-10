@@ -40,5 +40,9 @@
       "no-alert": 0
     },
     "extends": "eslint:recommended"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.7.0",
+    "core-js": "^3.4.8"
   }
 }

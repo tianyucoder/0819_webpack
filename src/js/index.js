@@ -6,6 +6,7 @@ import {sub} from './module2'
 import module3 from './module3'
 import data from '../json/test.json'
 import  '../css/index.less'
+import '@babel/polyfill'
 
 console.log(sum(1, 2));
 console.log(sub(3, 4));

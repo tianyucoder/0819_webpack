@@ -33,10 +33,23 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env']
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  useBuiltIns: 'usage',  // 按需引入需要使用polyfill
+                  corejs: { version: 3 }, // 解决warn
+                  targets: { // 指定兼容性处理哪些浏览器
+                    "chrome": "58",
+                    "ie": "11",
+                  }
+                }
+              ]
+            ],
+            cacheDirectory: true, // 开启babel缓存
           }
         }
-      }//语法转换（es6==>es5）
+      },//语法转换（es6==>es5）
     ]
   }
 };

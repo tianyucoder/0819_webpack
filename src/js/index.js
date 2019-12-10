@@ -13,6 +13,13 @@ console.log(module3.mul(5,6));
 console.log(module3.div(10,2));
 console.log(data)
 
-setTimeout(()=>{
-  console.log(1)
-},1000)
+
+console.log(1 == 2)
+
+new Promise((resolve)=>{
+  setTimeout(()=>{
+    resolve(1)
+  },1000)
+}).then(
+  value => console.log(value)
+)

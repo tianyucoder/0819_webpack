@@ -20,7 +20,23 @@ module.exports = {
           'css-loader', // 将css以commonjs方式整合到js文件中
           'less-loader'  // 将less文件解析成css
         ]
-      }
+      }, //配置解析less
+      {
+        test: /\.js$/,  //只检测js文件
+        exclude: /node_modules/,  //排除node_modules文件夹
+        enforce: "pre",  //提前加载使用
+        loader: "eslint-loader"//使用eslint-loader解析
+      }, //进行js语法检查
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
+      }//语法转换（es6==>es5）
     ]
   }
 };

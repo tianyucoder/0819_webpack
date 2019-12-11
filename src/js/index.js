@@ -6,6 +6,7 @@ import {sub} from './module2'
 import module3 from './module3'
 import data from '../json/test.json'
 import  '../css/index.less'
+import  '../css/iconfont.less'
 import '@babel/polyfill'
 
 console.log(sum(1, 2));
@@ -15,7 +16,7 @@ console.log(module3.div(10,2));
 console.log(data)
 
 
-console.log(1 == 2)
+console.log(1 == 4)
 
 new Promise((resolve)=>{
   setTimeout(()=>{
